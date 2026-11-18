@@ -1,0 +1,12 @@
+# Temporary screenshots, local audit artifacts & Python cache
+.verify_shots/
+.taste-skill/
+mostaql_gallery/
+desktop-*.png
+mobile-*.png
+modal-*.png
+__pycache__/
+*.pyc
+.tmp_*
+Thumbs.db
+.DS_Store

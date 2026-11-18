@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-vertical="rawnaq" data-view="web">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قَوَام استوديو | Qawam-Studio — 3-World Commerce & CPQ Suite</title>
+  <meta name="description" content="منصة قوام استوديو بثلاثة عوالم تجارية مستقلة: رونق للفخامة، مقياس للطباعة والتعشيش الهندسي، ومدار للعتاد الصناعي." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312100E'/%3E%3Cpath d='M16 6L26 16L16 26L6 16Z' fill='none' stroke='%23E4C158' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3.5' fill='%23E4C158'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#mainContent" id="skipLink">تجاوز إلى المحتوى الرئيسي</a>
+
+  <!-- Global Suite Header & 3-World Switcher -->
+  <header class="suite-header" id="suiteHeader">
+    <div class="suite-header-inner">
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect x="2" y="2" width="24" height="24" rx="5" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M14 6.5L21.5 14L14 21.5L6.5 14L14 6.5Z" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="14" cy="14" r="2.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <div class="brand-text">
+          <span class="brand-name" id="brandName">قَوَام استوديو</span>
+          <span class="brand-sub" id="brandSub">منصة التجارة متعددة العوالم</span>
+        </div>
+      </div>
+
+      <nav class="vertical-switcher" id="verticalSwitcher" role="tablist" aria-label="اختيار العالم التجاري">
+        <button type="button" class="vertical-tab is-active" role="tab" aria-selected="true" data-vertical-btn="rawnaq" id="tabRawnaq">
+          <span class="v-tab-name" data-i18n="v_rawnaq">رَوْنَق | RAWNAQ</span>
+          <span class="v-tab-tag" data-i18n="v_rawnaq_tag">دار الفخامة</span>
+        </button>
+        <button type="button" class="vertical-tab" role="tab" aria-selected="false" data-vertical-btn="miqyas" id="tabMiqyas">
+          <span class="v-tab-name" data-i18n="v_miqyas">مِقْيَاس | MIQYAS</span>
+          <span class="v-tab-tag" data-i18n="v_miqyas_tag">منصة CPQ</span>
+        </button>
+        <button type="button" class="vertical-tab" role="tab" aria-selected="false" data-vertical-btn="madar" id="tabMadar">
+          <span class="v-tab-name" data-i18n="v_madar">مَدَار | MADAR</span>
+          <span class="v-tab-tag" data-i18n="v_madar_tag">عتاد معياري</span>
+        </button>
+      </nav>
+
+      <div class="global-actions">
+        <div class="segmented-control" role="group" aria-label="وضع العرض">
+          <button type="button" class="seg-btn is-active" id="btnViewWeb" data-view-btn="web" aria-pressed="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+            </svg>
+            <span data-i18n="view_web">الويب</span>
+          </button>
+          <button type="button" class="seg-btn" id="btnViewMobile" data-view-btn="mobile" aria-pressed="false">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <rect x="6" y="2" width="12" height="20" rx="2.5"/>
+              <path d="M11 18h2"/>
+            </svg>
+            <span data-i18n="view_mobile">تطبيق الجوال</span>
+          </button>
+        </div>
+
+        <button type="button" class="icon-text-btn" id="btnLangToggle" aria-label="تبديل اللغة">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M3.6 9h16.8M3.6 15h16.8M12 3a14.5 14.5 0 0 1 0 18M12 3a14.5 14.5 0 0 0 0 18"/>
+          </svg>
+          <span id="langLabel">English</span>
+        </button>
+
+        <button type="button" class="cart-trigger-btn" id="btnOpenCart" aria-label="فتح سلة المشتريات">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <path d="M6 6h15l-1.5 9h-12z"/>
+            <path d="M6 6L4.5 3H2"/>
+            <circle cx="9.5" cy="19.5" r="1.5"/>
+            <circle cx="17.5" cy="19.5" r="1.5"/>
+          </svg>
+          <span class="cart-trigger-label" data-i18n="cart_btn">السلة</span>
+          <span class="cart-badge num" dir="ltr" id="headerCartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Suite Stage -->
+  <div class="suite-stage" id="suiteStage">
+    <div class="device-shell" id="deviceShell">
+
+      <!-- Mobile Simulator Chrome (data-view="mobile") -->
+      <div class="mobile-chrome-top" id="mobileChromeTop" hidden>
+        <div class="mobile-status-row">
+          <span class="num" dir="ltr">11:33</span>
+          <span class="mobile-notch-pill" aria-hidden="true"></span>
+          <span class="num" dir="ltr">5G 100%</span>
+        </div>
+        <div class="mobile-app-bar">
+          <div class="mobile-app-brand">
+            <span class="mobile-app-title" id="mobileAppTitle">رَوْنَق | RAWNAQ</span>
+            <span class="mobile-app-sub" id="mobileAppSub">تطبيق المتجر التفاعلي</span>
+          </div>
+          <button type="button" class="mobile-cart-pill" id="mobileTopCartBtn" aria-label="سلة الجوال">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M6 6h15l-1.5 9h-12z"/>
+              <path d="M6 6L4.5 3H2"/>
+            </svg>
+            <span class="num" dir="ltr" id="mobileCartCount">0</span>
+          </button>
+        </div>
+        <div class="mobile-category-rail" id="mobileCategoryRail" role="tablist" aria-label="تصنيفات الجوال"></div>
+      </div>
+
+      <main class="suite-main" id="mainContent">
+
+        <!-- ================================================================
+             WORLD 01: RAWNAQ — Warm Alabaster Editorial Maison & Salon Atelier
+             ================================================================ -->
+        <div class="world-view world-rawnaq" id="worldRawnaq" data-world="rawnaq">
+          <!-- 1A. Editorial Monograph Hero -->
+          <section class="rawnaq-hero" id="rawnaqHero" aria-labelledby="rawnaqHeroTitle">
+            <div class="rawnaq-hero-grid">
+              <div class="rawnaq-hero-copy">
+                <h1 class="rawnaq-h1" id="rawnaqHeroTitle">دار رَوْنَق للعطور النادرة والساعات الميكانيكية</h1>
+                <p class="rawnaq-lead" id="rawnaqHeroDesc">
+                  مقتنيات صُممت للبقاء الطويل مع نقش ليزري مذهب حسب الطلب وصناديق عرض من المخمل والجوز الطبيعي.
+                </p>
+                <div class="rawnaq-hero-actions">
+                  <a href="#rawnaqAtelier" class="btn-primary" id="rawnaqCtaAtelier" data-i18n="r_cta_atelier">ادخل صالون النقش</a>
+                  <a href="#rawnaqLookbook" class="btn-secondary" id="rawnaqCtaGallery" data-i18n="r_cta_gallery">مختارات الدار</a>
+                </div>
+              </div>
+              <figure class="rawnaq-plinth" id="rawnaqHeroPlinth"></figure>
+            </div>
+          </section>
+
+          <!-- 1B. Asymmetric Editorial Lookbook Gallery (Unique to RAWNAQ) -->
+          <section class="rawnaq-lookbook" id="rawnaqLookbook" aria-labelledby="rawnaqLookbookTitle">
+            <div class="rawnaq-section-bar">
+              <div>
+                <h2 class="rawnaq-h2" id="rawnaqLookbookTitle" data-i18n="r_gallery_title">أرشيف الإصدارات المرقّمة</h2>
+                <p class="rawnaq-sub" id="rawnaqLookbookSub" data-i18n="r_gallery_sub">تصفح المختارات أو أرسل أي قطعة مباشرة إلى طاولة النقش.</p>
+              </div>
+              <div class="rawnaq-filter-bar">
+                <div class="category-pills" id="rawnaqCategoryPills" role="tablist" aria-label="تصفية مختارات رونق"></div>
+                <input type="search" class="field-search field-search-editorial" id="rawnaqSearchInput" placeholder="ابحث في الأرشيف..." aria-label="البحث في أرشيف رونق" />
+              </div>
+            </div>
+            <div class="rawnaq-gallery-grid" id="rawnaqCatalogGrid"></div>
+          </section>
+
+          <!-- 1C. Intimate Salon Laser-Engraving & Gift Box Atelier -->
+          <section class="rawnaq-atelier" id="rawnaqAtelier" aria-labelledby="rawnaqAtelierTitle">
+            <div class="rawnaq-section-bar">
+              <div>
+                <h2 class="rawnaq-h2" id="rawnaqAtelierTitle" data-i18n="r_atelier_title">صالون النقش بالليزر وتغليف الهدايا</h2>
+                <p class="rawnaq-sub" id="rawnaqAtelierSub" data-i18n="r_atelier_sub">خصّص العبارة والمعدن وتشطيب الصندوق مع معاينة حية قبل الإضافة للسلة.</p>
+              </div>
+            </div>
+            <div class="rawnaq-atelier-split">
+              <div class="rawnaq-tray-stage" id="rawnaqSvgStage"></div>
+              <div class="rawnaq-salon-controls">
+                <div class="control-group">
+                  <label class="control-label" for="rawnaqEditionSelect" data-i18n="r_edition">الإصدار الفاخر</label>
+                  <select class="field-select" id="rawnaqEditionSelect"></select>
+                </div>
+                <div class="control-group">
+                  <span class="control-label" data-i18n="r_box">تشطيب صندوق الإهداء</span>
+                  <div class="swatch-row" id="rawnaqBoxOptions" role="radiogroup" aria-label="تشطيب صندوق الإهداء"></div>
+                </div>
+                <div class="control-group">
+                  <span class="control-label" data-i18n="r_plaque">معدن اللوحة التذكارية</span>
+                  <div class="swatch-row" id="rawnaqPlaqueOptions" role="radiogroup" aria-label="معدن اللوحة التذكارية"></div>
+                </div>
+                <div class="control-row-2">
+                  <div class="control-group">
+                    <label class="control-label" for="rawnaqEngravingInput" data-i18n="r_engraving">نص النقش بالليزر</label>
+                    <input type="text" class="field-input" id="rawnaqEngravingInput" maxlength="24" value="قَوَام ٢٠٢٦" autocomplete="off" />
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="rawnaqYearInput" data-i18n="r_monogram">التاريخ أو الأحرف</label>
+                    <input type="text" class="field-input num-input" dir="ltr" id="rawnaqYearInput" maxlength="10" value="EST. 2026" autocomplete="off" />
+                  </div>
+                </div>
+                <div class="rawnaq-acquisition-bar">
+                  <div class="rawnaq-metrics-strip" id="rawnaqMetrics"></div>
+                  <button type="button" class="btn-primary btn-full" id="btnAddRawnaq">
+                    <span data-i18n="r_add_btn">اعتماد الطقم وإضافته للسلة</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- ================================================================
+             WORLD 02: MIQYAS — Deep Blueprint Production Workbench First
+             ================================================================ -->
+        <div class="world-view world-miqyas" id="worldMiqyas" data-world="miqyas" hidden>
+          <!-- 2A. Compact Production Header + Immediate 3-Zone Workbench -->
+          <section class="miqyas-hero-workbench" id="miqyasHero" aria-labelledby="miqyasHeroTitle">
+            <div class="miqyas-topbar-band">
+              <div class="miqyas-heading-col">
+                <h1 class="miqyas-h1" id="miqyasHeroTitle">مختبر مِقْيَاس للوحات المضيئة والتعشيش الهندسي 2D</h1>
+                <p class="miqyas-lead" id="miqyasHeroDesc">
+                  ضبط فوري للأبعاد بالملليمتر، فحص هوامش القص والإضاءة، وحساب الألواح والرولات بأعداد صحيحة دون كسور.
+                </p>
+              </div>
+              <div class="miqyas-quick-presets" id="miqyasPresetChips">
+                <a href="#miqyasLedger" class="btn-secondary btn-sm" data-i18n="m_jump_ledger">جدول المقاسات القياسية</a>
+              </div>
+            </div>
+
+            <div class="miqyas-workbench-3zone" id="miqyasStudio">
+              <!-- Zone 1: Parameters Dock -->
+              <div class="miqyas-dock">
+                <div class="control-group">
+                  <label class="control-label" for="miqyasSubstrateSelect" data-i18n="m_substrate">الخامة واللوح القياسي</label>
+                  <select class="field-select" id="miqyasSubstrateSelect"></select>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="miqyasSignTextInput" data-i18n="m_sign_label">النص الظاهر على النموذج</label>
+                  <input type="text" class="field-input" id="miqyasSignTextInput" maxlength="24" value="QAWAM ATELIER" autocomplete="off" />
+                </div>
+
+                <div class="control-row-2">
+                  <div class="control-group">
+                    <label class="control-label" for="miqyasWidthInput" data-i18n="m_width">العرض (mm)</label>
+                    <input type="range" class="field-range" id="miqyasWidthRange" min="150" max="2400" step="10" value="420" />
+                    <input type="number" class="field-input num-input" dir="ltr" id="miqyasWidthInput" min="150" max="2400" step="10" value="420" />
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="miqyasHeightInput" data-i18n="m_height">الارتفاع (mm)</label>
+                    <input type="range" class="field-range" id="miqyasHeightRange" min="100" max="1200" step="10" value="280" />
+                    <input type="number" class="field-input num-input" dir="ltr" id="miqyasHeightInput" min="100" max="1200" step="10" value="280" />
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="miqyasQtyInput" data-i18n="m_qty">الكمية (1–500)</label>
+                  <div class="qty-inline-pair">
+                    <input type="range" class="field-range" id="miqyasQtyRange" min="1" max="500" step="1" value="28" />
+                    <input type="number" class="field-input num-input qty-compact-num" dir="ltr" id="miqyasQtyInput" min="1" max="500" step="1" value="28" />
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <span class="control-label" data-i18n="m_led">إضاءة الخلفية LED</span>
+                  <div class="option-grid option-grid-2" id="miqyasLedOptions" role="radiogroup" aria-label="إضاءة الخلفية"></div>
+                </div>
+
+                <div class="control-group">
+                  <span class="control-label" data-i18n="m_preflight">طبقات الفحص المسبق Pre-Flight</span>
+                  <div class="check-grid" id="miqyasPreflightChecks"></div>
+                </div>
+              </div>
+
+              <!-- Zone 2 & 3: Center Dual Inspection Canvas + Production Ticket -->
+              <div class="miqyas-inspection-bay">
+                <div class="miqyas-ref-strip" id="miqyasRefStrip"></div>
+                <div class="miqyas-dual-canvases">
+                  <div class="blueprint-frame">
+                    <div class="canvas-bar">
+                      <span class="canvas-title" data-i18n="m_sign_preview">معاينة اللوحة والفحص المسبق</span>
+                      <span class="canvas-meta num" dir="ltr" id="miqyasDpiBadge">300 DPI OPTIMAL</span>
+                    </div>
+                    <div class="svg-holder" id="miqyasSignSvg"></div>
+                  </div>
+
+                  <div class="blueprint-frame">
+                    <div class="canvas-bar">
+                      <span class="canvas-title" data-i18n="m_nest_preview">خريطة التعشيش الهندسي 2D</span>
+                      <span class="canvas-meta num" dir="ltr" id="miqyasOrientBadge">0° BEST FIT</span>
+                    </div>
+                    <div class="svg-holder" id="miqyasNestSvg"></div>
+                  </div>
+                </div>
+
+                <div class="miqyas-telemetry-bar">
+                  <div class="cpq-metrics-grid cpq-metrics-6" id="miqyasMetrics"></div>
+                  <button type="button" class="btn-primary btn-full" id="btnAddMiqyas">
+                    <span data-i18n="m_add_btn">أضف طلب الطباعة والتعشيش للسلة</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2B. Horizontal Print Production Ledger (Distinct from card grids!) -->
+          <section class="miqyas-ledger-section" id="miqyasLedger" aria-labelledby="miqyasLedgerTitle">
+            <div class="ledger-header-row">
+              <div>
+                <h2 class="miqyas-h2" id="miqyasLedgerTitle" data-i18n="m_ledger_title">دليل التشغيلات القياسية الجاهزة</h2>
+                <p class="miqyas-sub" data-i18n="m_ledger_sub">حمّل أي مقاس قياسي إلى مختبر التعشيش أو أضفه مباشرة إلى السلة.</p>
+              </div>
+              <div class="catalog-controls">
+                <div class="category-pills" id="miqyasCategoryPills" role="tablist" aria-label="تصنيفات مقياس"></div>
+                <input type="search" class="field-search" id="miqyasSearchInput" placeholder="ابحث بالمقاس أو الكود..." aria-label="البحث في مقياس" />
+              </div>
+            </div>
+            <div class="miqyas-ledger-rows" id="miqyasCatalogRows"></div>
+          </section>
+        </div>
+
+        <!-- ================================================================
+             WORLD 03: MADAR — Machined Anodized Aluminum & Safety-Orange Modular Hardware
+             ================================================================ -->
+        <div class="world-view world-madar" id="worldMadar" data-world="madar" hidden>
+          <!-- 3A. Modular Industrial Hero -->
+          <section class="madar-hero" id="madarHero" aria-labelledby="madarHeroTitle">
+            <div class="madar-hero-grid">
+              <div class="madar-hero-copy">
+                <h1 class="madar-h1" id="madarHeroTitle">منظومة مَدَار للعتاد الصناعي وحوسبة الحافة</h1>
+                <p class="madar-lead" id="madarHeroDesc">
+                  وحدات معالجة وبوابات استشعار معيارية بهياكل ألومنيوم مؤكسد وتبريد سلبي ومواصفات موثقة للتشغيل المتواصل.
+                </p>
+                <div class="madar-spec-tags num" dir="ltr">
+                  <span class="spec-tag">64 TOPS NPU</span>
+                  <span class="spec-tag">IP67 / IP68</span>
+                  <span class="spec-tag">10GbE SFP+</span>
+                  <span class="spec-tag">-40°C..+85°C</span>
+                </div>
+                <div class="madar-hero-actions">
+                  <a href="#madarStudio" class="btn-primary" data-i18n="d_cta_matrix">مصفوفة المقارنة والجملة</a>
+                  <a href="#madarCatalog" class="btn-secondary" data-i18n="d_cta_modules">استعراض الوحدات</a>
+                </div>
+              </div>
+              <div class="madar-blueprint-bay" id="madarHeroSchematic"></div>
+            </div>
+          </section>
+
+          <!-- 3B. Modular Hardware Block Grid (BEFORE Studio, crisp 4px chassis blocks) -->
+          <section class="madar-catalog-section" id="madarCatalog" aria-labelledby="madarCatalogTitle">
+            <div class="madar-section-bar">
+              <div>
+                <h2 class="madar-h2" id="madarCatalogTitle" data-i18n="d_modules_title">وحدات العتاد الصناعي المعيارية</h2>
+                <p class="madar-sub" data-i18n="d_modules_sub">أضف وحدات منفردة أو أرسلها مباشرة إلى جدول المقارنة وطلبات الشركات.</p>
+              </div>
+              <div class="catalog-controls">
+                <div class="category-pills" id="madarCategoryPills" role="tablist" aria-label="تصنيفات مدار"></div>
+                <input type="search" class="field-search" id="madarSearchInput" placeholder="ابحث بالرقم الهندسي SKU..." aria-label="البحث في مدار" />
+                <select class="field-select field-select-sm" id="madarSortSelect" aria-label="ترتيب العتاد">
+                  <option value="featured" data-i18n="sort_featured">الأبرز</option>
+                  <option value="price-asc" data-i18n="sort_asc">السعر: الأقل</option>
+                  <option value="price-desc" data-i18n="sort_desc">السعر: الأعلى</option>
+                </select>
+              </div>
+            </div>
+            <div class="madar-modules-grid" id="madarCatalogGrid"></div>
+          </section>
+
+          <!-- 3C. Side-by-Side Spec Comparator & Rapid Wholesale SKU Matrix -->
+          <section class="madar-studio-section" id="madarStudio" aria-labelledby="madarStudioTitle">
+            <div class="madar-section-bar">
+              <div>
+                <h2 class="madar-h2" id="madarStudioTitle" data-i18n="d_studio_title">مصفوفة المواصفات ومُكوّن مناقصات الجملة</h2>
+                <p class="madar-sub" data-i18n="d_studio_sub">قارن بين جهازين أو ثلاثة مع تمييز الأعلى كفاءة، واضبط كميات التوريد الفورية.</p>
+              </div>
+            </div>
+
+            <div class="madar-workbench-2col">
+              <div class="madar-panel">
+                <div class="block-header-row">
+                  <h3 class="block-title" data-i18n="d_compare_title">مقارنة المواصفات الهندسية (2–3 أجهزة)</h3>
+                  <div class="compare-toggles" id="madarCompareToggles"></div>
+                </div>
+                <div class="table-scroll-wrap">
+                  <table class="spec-matrix-table" id="madarSpecTable">
+                    <thead id="madarSpecHead"></thead>
+                    <tbody id="madarSpecBody"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="madar-panel">
+                <div class="block-header-row">
+                  <h3 class="block-title" data-i18n="d_bulk_title">مُكوّن طلبات الشركات بالجملة</h3>
+                  <span class="tier-legend num" dir="ltr">10+: 8% | 50+: 15% | 200+: 22%</span>
+                </div>
+                <div class="bulk-sku-list" id="madarBulkList"></div>
+                <div class="madar-bulk-footer">
+                  <div class="cpq-metrics-grid" id="madarMetrics"></div>
+                  <button type="button" class="btn-primary btn-full" id="btnAddMadarBulk">
+                    <span data-i18n="d_add_btn">أضف طلبية الجملة للسلة</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+      </main>
+
+      <!-- Mobile Simulator Bottom Navigation -->
+      <nav class="mobile-bottom-nav" id="mobileBottomNav" hidden aria-label="تنقل تطبيق الجوال">
+        <button type="button" class="mobile-tab is-active" data-mobile-tab="home" id="mTabHome">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>
+          </svg>
+          <span data-i18n="mtab_home">الرئيسية</span>
+        </button>
+        <button type="button" class="mobile-tab" data-mobile-tab="store" id="mTabStore">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+            <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+            <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+          </svg>
+          <span data-i18n="mtab_store">المتجر</span>
+        </button>
+        <button type="button" class="mobile-tab" data-mobile-tab="studio" id="mTabStudio">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <path d="M4 20h16M7 16l9-9 2 2-9 9H7v-2z"/>
+          </svg>
+          <span data-i18n="mtab_studio">الاستوديو</span>
+        </button>
+        <button type="button" class="mobile-tab" data-mobile-tab="cart" id="mTabCart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <path d="M6 6h15l-1.5 9h-12z"/>
+            <path d="M6 6L4.5 3H2"/>
+          </svg>
+          <span data-i18n="mtab_cart">السلة</span>
+        </button>
+      </nav>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="suite-footer" id="suiteFooter">
+    <div class="footer-inner">
+      <p class="footer-copy" id="footerCopy">قَوَام استوديو: ثلاثة عوالم تجارية مستقلة ومحرك تسعير هندسي صحيح</p>
+      <p class="footer-meta num" dir="ltr">QAWAM-STUDIO · 3 DISTINCT WORLDS · ZERO-FLOAT CPQ</p>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Cart Drawer -->
+  <div class="drawer-backdrop" id="cartBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle" hidden>
+    <div class="drawer-header">
+      <h2 class="drawer-title" id="cartDrawerTitle" data-i18n="cart_title">سلة المشتريات وعرض السعر</h2>
+      <button type="button" class="icon-close-btn" id="btnCloseCart" aria-label="إغلاق السلة">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body" id="cartItemsContainer"></div>
+
+    <div class="drawer-footer">
+      <div class="cart-totals" id="cartTotalsBox"></div>
+      <div class="drawer-actions">
+        <button type="button" class="btn-primary btn-full" id="btnOpenQuoteModal" data-i18n="cart_quote_btn">إصدار فاتورة وعرض سعر فوري</button>
+        <button type="button" class="btn-secondary btn-full" id="btnClearCart" data-i18n="cart_clear_btn">تفريغ السلة</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Instant Printable Proforma Quote / Tax Invoice Modal -->
+  <div class="modal-backdrop" id="quoteModalBackdrop" hidden></div>
+  <div class="quote-modal" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle" hidden>
+    <div class="modal-header">
+      <h2 class="modal-title" id="quoteModalTitle" data-i18n="quote_title">فاتورة وعرض سعر فوري</h2>
+      <button type="button" class="icon-close-btn" id="btnCloseQuoteModal" aria-label="إغلاق الفاتورة">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="modal-body" id="quotePrintArea">
+      <div class="quote-meta-grid">
+        <div class="quote-brand-col">
+          <strong class="quote-issuer" id="quoteIssuerName">قَوَام استوديو | Qawam-Studio</strong>
+          <span class="quote-subtext" id="quoteIssuerSub">حي العليا التجاري، الرياض</span>
+        </div>
+        <div class="quote-ref-col">
+          <div><span data-i18n="q_number">رقم العرض:</span> <strong class="num" dir="ltr" id="quoteRefNum">QWM-2026-4092</strong></div>
+          <div><span data-i18n="q_date">التاريخ:</span> <strong class="num" dir="ltr" id="quoteDateText">2026-11-18</strong></div>
+        </div>
+      </div>
+
+      <div class="quote-buyer-row">
+        <div class="control-group">
+          <label class="control-label" for="quoteBuyerInput" data-i18n="q_buyer_label">اسم العميل أو المنشأة</label>
+          <input type="text" class="field-input" id="quoteBuyerInput" value="شركة الرؤية المعمارية" />
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="quoteNotesInput" data-i18n="q_notes_label">مرجع المشروع أو التوصيل</label>
+          <input type="text" class="field-input" id="quoteNotesInput" value="توريد وتشغيل خلال 5 أيام عمل" />
+        </div>
+      </div>
+
+      <div class="table-scroll-wrap">
+        <table class="quote-table" id="quoteItemsTable">
+          <thead>
+            <tr>
+              <th data-i18n="q_col_item">الصنف والمواصفات</th>
+              <th data-i18n="q_col_vert">المسار</th>
+              <th data-i18n="q_col_qty">الكمية</th>
+              <th data-i18n="q_col_total">الإجمالي</th>
+            </tr>
+          </thead>
+          <tbody id="quoteItemsBody"></tbody>
+        </table>
+      </div>
+
+      <div class="quote-summary-box" id="quoteTotalsSummary"></div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn-secondary" id="btnCopyQuote" data-i18n="q_copy_btn">نسخ ملخص العرض</button>
+      <button type="button" class="btn-primary" id="btnPrintQuote" data-i18n="q_print_btn">طباعة / حفظ PDF</button>
+    </div>
+  </div>
+
+  <!-- Quick-View Visual Product Inspector Modal -->
+  <div class="modal-backdrop" id="productModalBackdrop" hidden></div>
+  <div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle" hidden>
+    <div class="modal-header">
+      <div class="product-modal-head">
+        <span class="product-modal-kicker num" dir="ltr" id="productModalKicker">SKU</span>
+        <h2 class="modal-title" id="productModalTitle">معاينة المنتج</h2>
+      </div>
+      <button type="button" class="icon-close-btn" id="btnCloseProductModal" aria-label="إغلاق المعاينة">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="product-modal-body" id="productModalBody">
+      <div class="product-modal-media" id="productModalMedia"></div>
+      <div class="product-modal-details">
+        <p class="product-modal-desc" id="productModalDesc"></p>
+        <dl class="product-spec-grid" id="productModalSpecs"></dl>
+        <div class="product-modal-actions" id="productModalActions"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
